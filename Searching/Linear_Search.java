@@ -1,4 +1,4 @@
-package DSA.Sorting;
+package DSA.Searching;
 import java.util.*;
 
 class Linear_Search{
