@@ -4,21 +4,24 @@ import java.util.*;
 
 public class binary_search {
     
-    public static int binarysearch(int arr[],int left, int right,int iteam){
+    static int binarysearch(int arr[],int left, int right,int iteam){
         while(left<=right){
         int mid = left + (right-left)/2;
         if (arr[mid]==iteam){
+            System.out.print("The element has been found at the index of: "+ mid);
             return mid;
         }
-        if (left<iteam){
+        else if (iteam>arr[mid]){
             left = mid +1;
         }
-        else{
+        else if(iteam<arr[mid]){
             right = mid -1;
         }
     }
+        System.out.print("Element not found");
         return -1;
     }
+    
     public static void main(String[]args){
         Scanner s = new Scanner(System.in);
         System.out.print("enter size of the array: ");
@@ -31,14 +34,7 @@ public class binary_search {
         System.out.print("enter the search element: ");
         int ser = s.nextInt();
 
-        int pos = binarysearch(arr, 0, size-1, ser);
-
-        if(pos == -1){
-            System.out.println("The element is not present in the array");
-        }
-        else{
-            System.out.println("The element has been found at the index of: "+ pos);
-        }
+        binarysearch(arr, 0, size-1, ser);
         s.close();
     }    
 }
