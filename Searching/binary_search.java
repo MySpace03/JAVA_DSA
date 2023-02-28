@@ -4,7 +4,9 @@ import java.util.*;
 
 public class binary_search {
     
-    static int binarysearch(int arr[],int left, int right,int iteam){
+    static int binarysearch(int arr[],int iteam){
+        int left = 0;
+        int right = arr.length -1 ;
         while(left<=right){
         int mid = left + (right-left)/2;
         if (arr[mid]==iteam){
@@ -14,7 +16,7 @@ public class binary_search {
         else if (iteam>arr[mid]){
             left = mid +1;
         }
-        else if(iteam<arr[mid]){
+        else{
             right = mid -1;
         }
     }
@@ -34,11 +36,11 @@ public class binary_search {
         System.out.print("enter the search element: ");
         int ser = s.nextInt();
 
-        binarysearch(arr, 0, size-1, ser);
+        binarysearch(arr,ser);
         s.close();
     }    
 }
 // Binary Search implementation in Java (Recursive)
-// Time Complexity : O(N)
+// Time Complexity : O(log N)
 // Space Complexity : O(1)
 // Auxiliary Space Complexity : O(N) due to function call stack
